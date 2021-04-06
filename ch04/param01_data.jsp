@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Action Tag: Second Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h3>This is second page!!</h3>
-Today is <%=new java.util.Date() %>
-<p>=======second.jsp=========</p>
+
+<p>ID : <%=request.getParameter("id") %></p>
+<%String name=request.getParameter("name"); %>
+<p>
+<%=java.net.URLDecoder.decode(name)%>
+</p>
 </body>
 </html>

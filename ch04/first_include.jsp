@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Action Tag: Second Page</title>
+<title>Action Tag : Include</title>
 </head>
 <body>
-<h3>This is second page!!</h3>
-Today is <%=new java.util.Date() %>
-<p>=======second.jsp=========</p>
+<h3>This is file named first_include.jsp</h3>
+<jsp:include page="second_include.jsp" flush="false"/>
+<p>Java Server Page</p>
 </body>
 </html>

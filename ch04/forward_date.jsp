@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%-- <%@ page import="java.util.Date"%>--%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Action Tag: Second Page</title>
+<title>Action Tag</title>
 </head>
 <body>
-<h3>This is second page!!</h3>
-Today is <%=new java.util.Date() %>
-<p>=======second.jsp=========</p>
+<p>Today's date :</p>
+<p><%=new java.util.Date().toLocaleString() %></p>
+
+
 </body>
 </html>
