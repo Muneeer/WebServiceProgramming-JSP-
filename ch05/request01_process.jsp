@@ -7,9 +7,16 @@
 <title>Implicit Object</title>
 </head>
 <body>
-	<form action="request01_process.jsp" method="post">
-	<p>Name : <input type="text" name="name"></p>
-	<p>Password : <input type="text" name="passwd"></p>
-	<input type="submit" value="Submit"></form>
+
+<%
+	request.setCharacterEncoding("utf-8");
+	String ID=request.getParameter("name");
+	String Password=request.getParameter("passwd");
+%>
+<p>
+ID : <%=ID%><br>
+Password : <%=Password%>
+</p>
+
 </body>
 </html>
