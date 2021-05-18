@@ -11,22 +11,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-    
-    
-    <script type="text/javascript">
-    var myVar = setInterval(myTimer ,1000);
-    function myTimer() {
-      var d = new Date();
-      document.getElementById("time").innerHTML = "Current time : "+d.toLocaleTimeString();
-    }
-   </script>
-
-
-
-
 <head>
 <meta charset="UTF-8">
-<title>WebMarket</title>
+<title>Item detail</title>
 </head>
 <body>
 <%@include file="menu.jsp" %>
@@ -36,37 +23,29 @@
 		<h1 class="display-3"> Product details</h1>
 	</div>
 </div>
-
 <%
-	ArrayList<Product> listofProducts=productDAO.getAllProducts();
+	String id=request.getParameter("id");
+	Product product=productDAO.getProductById(id);
 %>
+
 <div class="container">
-<div class="row" align="center">
-	<%
-		for(int i=0;i<listofProducts.size();i++){
-		Product product=listofProducts.get(i);
-	%>
+<div class="row">
 	<div class="col-md-4">
 		<h3><%=product.getName() %></h3>
 		<p><%=product.getDescription() %></p>
+		<p class="badge badge-danger"><%=product.getProductId() %></p>
+		<p><%=product.getManufacturer() %></p>
+		<p><%=product.getCategory() %></p>
+		<p><%=product.getUnitsInStock() %></p>
 		<p><%=product.getUnitPrice() %> won</p>
-		<p><a class="btn btn-secondary" href="./product.jsp?id=<%=product.getProductId()%>">items</a></p>
+		<a href="#" class="btn btn-success">Buy</a>
+		<a href="./products.jsp" class="btn btn-primary">Items</a>
 	</div>
-	<%} %>
 </div>
 <hr>
 </div>
 
 <%@include file="footer.jsp" %>
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
-
-
-
-
